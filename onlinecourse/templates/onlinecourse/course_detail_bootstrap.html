@@ -54,6 +54,38 @@
             <!-- <HINT> Use Bootstrap Collapse to hide exam first, more details could be found here
             https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp-->
 
+            {% if user.is_authenticated %}
+            <button class="btn btn-primary btn-block" data-toggle="collapse" data-target="#choices_{{lesson.order|add:1}}">Start Exam</button>
+            <div id="choices_{{lesson.order|add:1}}" class="collapse">
+                        <form id="questionform" action="{% url 'onlinecourse:submit' course.id %}" method="post">
+                                <br><br>
+                            {% for lesson in course.lesson_set.all %}
+                                {% for question in lesson.question_set.all %}
+                                    <div class="card mt-1">
+                                        <div class="card-header"><h5>{{ question.question_text}}</h5></div>
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                           <br>
+                                            {% for choice in question.choice_set.all %}
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="choice_{{choice.id}}"
+                                                               class="form-check-input" id="{{choice.id}}"
+                                                               value="{{choice.id}}">{{ choice.choice_text }}
+                                                    </label>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                            <input class="btn btn-success btn-block" type="submit" value="Submit">
+                    </form>
+
+            </div>
+    <br>
+        {% endif %}
+
             <!--
 
             A collapse example here:
