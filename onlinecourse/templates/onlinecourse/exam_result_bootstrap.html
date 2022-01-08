@@ -39,16 +39,65 @@
     {% if grade > 80 %}
     <div class="alert alert-success">
        <!--HINT Display passed info -->
+       <h2>Congratulations, {{ user.first_name }}! You passed the exam and completed the course with score {{ grade|floatformat:1 }}/100 </h2>>
     </div>
         {% else %}
         <div class="alert alert-danger">
+    </div>
             <!--HINT Display failed info -->
+            <h2>Failed! Sorry, {{ user.first_name }}! You have failed the exam with score {{ grade|floatformat:1 }}/100</h2>
+        </div>
         </div>
         <a class="btn btn-link text-danger" href="{% url 'onlinecourse:course_details' course.id %}">Re-test</a>
         {% endif %}
         <div class="card-columns-vertical mt-1">
         <h5 class="">Exam results</h5>
             <!--HINT Display exam results-->
+            <div id="exam_results" class="container-fluid">
+                <br><br>
+            {% for lesson in course.lesson_set.all %}
+                {% for question in lesson.question_set.all %}
+                    <div class="card mt-1">
+                        <div class="card-header"><h5>{{ question.question_text}}</h5></div>
+                        {% csrf_token %}
+                        <div class="form-group">
+                           <br>
+                            {% for choice in question.choice_set.all %}
+                                    {% if choice in sub_choices %}
+                                        {% if choice.is_correct %}
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <b style="color:MediumSeaGreen;">Correct Answer: {{ choice.choice_text }}</b>
+                                                </label>
+                                            </div>
+                                        {% else %}
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <b style="color:red;">Wrong Answer: {{ choice.choice_text }}</b>
+                                                </label>
+                                            </div>
+                                        {% endif %}
+                                    {% else %}
+                                        {% if choice.is_correct %}
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <b style="color:orange;">Not selected: {{ choice.choice_text }}</b>
+                                                </label>
+                                            </div>
+                                        {% else %}
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    {{ choice.choice_text }}
+                                                </label>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </body>
