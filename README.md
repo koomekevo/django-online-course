@@ -1,16 +1,37 @@
-# django-online-course
-**General Notes**
+# DjangoOnlineCourse
 
-An `onlinecourse` app has already been provided in this repo upon which you will be adding a new assesement feature.
+This is an online course in which one can enroll for lessons and take exams. 
 
-- If you want to develop the final project on Theia hosted by [IBM Developer Skills Network](https://labs.cognitiveclass.ai/), you will need to create the same project structure on Theia workspace and save it everytime you close the browser
-- Or you could develop the final project locally by setting up your own Python runtime and IDE
-- Hints for the final project are left on source code files
-- You may choose any cloud platform for deployment (default is IBM Cloud Foundry)
-- Depends on your deployment, you may choose any SQL database Django supported such as SQLite3, PostgreSQL, and MySQL (default is SQLite3)
+## BuiltWith
 
-**ER Diagram**
-For your reference, we have prepared the ER diagram design for the new assesement feature.
+- Python Django.
+- Bootstrap.
+- SQLite. 
 
-![Onlinecourse ER Diagram](https://github.com/ibm-developer-skills-network/final-cloud-app-with-database/blob/master/static/media/course_images/onlinecourse_app_er.png)
+## Getting Started
 
+Run `git clone https://github.com/koomekevo/django-online-course.git`
+
+Then run `cd django-online-course` and run `python manage.py runserver`
+
+## Authors
+
+👤 **Kevin Koome**
+
+- GitHub: [@koomekevo](https://github.com/koomekevo)
+- Twitter: [@koomekevo](https://twitter.com/koomekevo)
+- LinkedIn: [LinkedIn](https://ke.linkedin.com/in/kevin-koome-aab84186)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
