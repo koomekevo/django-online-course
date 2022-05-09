@@ -1,6 +1,6 @@
 # DjangoOnlineCourse
 
-This is an online course in which one can enroll for lessons and take exams. 
+This is an online platform in which one can enroll for lessons and take exams. 
 
 ## BuiltWith
 
