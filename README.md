@@ -1,18 +1,22 @@
 # DjangoOnlineCourse
 
-This is an online platform in which one can enroll for lessons and take exams. 
+This is an online platform in which one can enroll for lessons and take exams.
 
 ## BuiltWith
 
 - Python Django.
 - Bootstrap.
-- SQLite. 
+- SQLite.
 
 ## Getting Started
 
 Run `git clone https://github.com/koomekevo/django-online-course.git`
 
-Then run `cd django-online-course` and run `python manage.py runserver`
+Then run `cd django-online-course`
+
+Then run `pip install -r requirements.txt`
+
+Then run `python manage.py runserver`
 
 ## Authors
 
