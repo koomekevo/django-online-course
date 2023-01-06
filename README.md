@@ -14,6 +14,10 @@ Run `git clone https://github.com/koomekevo/django-online-course.git`
 
 Then run `cd django-online-course`
 
+Then run `pipenv install --python <your version>` to install pipenv dependencies.
+
+Then run `pipenv install requests` to install pipfiles packages.
+
 Then run `pip install -r requirements.txt`
 
 Then run `python manage.py runserver`
