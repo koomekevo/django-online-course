@@ -1,4 +1,4 @@
-# fly.toml file generated for django-online-course on 2023-01-09T19:50:15+03:00
+# fly.toml file generated for django-online-course on 2023-01-09T20:34:29+03:00
 
 app = "django-online-course"
 kill_signal = "SIGINT"
