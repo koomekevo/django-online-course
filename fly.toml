@@ -1,9 +1,12 @@
-# fly.toml file generated for django-online-course on 2023-01-09T00:16:13+03:00
+# fly.toml file generated for django-online-course on 2023-01-09T19:50:15+03:00
 
 app = "django-online-course"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
+
+[deploy]
+  release_command = "python manage.py migrate"
 
 [env]
   PORT = "8000"

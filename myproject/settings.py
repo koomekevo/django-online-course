@@ -27,7 +27,7 @@ SECRET_KEY = 'aay0j_9b&ky3a7(8m8il+-1ud(scw12@w5!+5-=gsk6ynzi0ls'
 DEBUG = True
 
 # <HINT> add your cloud host here
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "django-online-course.fly.dev"]
+ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = ["https://django-online-course.fly.dev"]
 
@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'NAME_OF_DB',
+        'USER': 'DB_USER_NAME',
+        'PASSWORD': 'DB_PASSWORD',
+        'HOST': 'localhost',
+        'PORT': 'PORT_NUMBER',
     }
 }
 
