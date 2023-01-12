@@ -8,6 +8,9 @@ This is an online platform in which one can enroll for lessons and take exams.
 - Bootstrap.
 - SQLite.
 
+## LiveDemo
+
+https://django-online-course.fly.dev/onlinecourse/
 ## Getting Started
 
 Run `git clone https://github.com/koomekevo/django-online-course.git`
